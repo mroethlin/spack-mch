@@ -19,8 +19,6 @@ class AtlasUtilities(CMakePackage):
 
     depends_on('atlas@develop')
     depends_on('eckit')
-    depends_on('netcdf-cxx4')
-    depends_on('netcdf-c')
 
     variant('build_type', default='Release', description='Build type', values=('Debug', 'Release', 'DebugRelease'))
 
@@ -31,8 +29,6 @@ class AtlasUtilities(CMakePackage):
                     format(spec['ecbuild'].prefix))
         args.append('-Deckit_DIR={0}'.format(spec['eckit'].prefix))
         args.append('-Datlas_DIR={0}'.format(spec['atlas'].prefix))
-        args.append('-Dnetcdfcxx4_DIR={0}'.format(spec['netcdf-cxx4'].prefix))
-        args.append('-Dnetcdf_DIR={0}'.format(spec['netcdf-c'].prefix))
         args.append('-DCMAKE_BUILD_TYPE={0}'.format(self.spec.variants['build_type'].value))
 
         return args
