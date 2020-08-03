@@ -1,11 +1,12 @@
 config:
-  install_tree:
-  template_dirs:
-    - $spack/templates
-  module_roots:
-    tcl:
   build_stage:
   - $SCRATCH
   extensions:
+  - /home/matthias/workspace/spack-mch/tools/spack-scripting
   install_path_scheme: '{name}/{version}/{compiler.name}/{hash}'
+  install_tree: /home/matthias/workspace/tsa/spack/spack-install/tsa
+  module_roots:
+    tcl: /home/matthias/workspace/tsa/spack/modules/tsa
   source_cache: ~/.spack/source_cache
+  template_dirs:
+  - $spack/templates
